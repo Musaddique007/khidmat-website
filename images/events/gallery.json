@@ -1,0 +1,7 @@
+{
+  "food": ["food1.jpg", "food2.jpg", "food3.jpg"],
+  "amrit": ["amrit1.jpg", "amrit2.jpg", "amrit3.jpg"],
+  "healthcare": ["healthcare1.jpg", "healthcare2.jpg"],
+  "shiv": ["shiv1.jpg", "shiv2.jpg", "shiv3.jpg"],
+  "ambedkar": ["ambedkar1.jpg", "ambedkar2.jpg", "ambedkar3.jpg"]
+}
