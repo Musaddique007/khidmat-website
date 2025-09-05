@@ -17,47 +17,30 @@
     nav { background: #006666; padding: 10px; text-align: center; }
     nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 500; }
     nav a:hover { text-decoration: underline; }
-
-    .hero {
-      background: url('images/hero.jpg') no-repeat center center/cover;
-      color: white;
-      min-height: 80vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; flex-direction: column; padding: 0 20px;
-      position: relative;
-    }
-    .hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.4); z-index:0; }
-    .hero h2, .hero p { position:relative; z-index:1; }
+    .hero { background: url('images/hero.jpg') no-repeat center center/cover; color: white; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; padding: 0 20px; }
     .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
     .hero p { font-size: 1.2rem; max-width: 700px; }
-
-    .section { padding: 50px 20px; text-align: center; position: relative; z-index: 1; }
+    .section { padding: 50px 20px; text-align: center; }
     .section h2 { font-size: 2rem; margin-bottom: 20px; color: #008080; }
-
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:0 20px; }
-    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,.1); transition:transform .2s; cursor:pointer; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 20px; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; cursor: pointer; }
     .card:hover { transform: translateY(-5px); }
-    .card img { width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:10px; }
-
-    .about-logo { text-align:center; margin:15px 0; }
-    .about-logo img { width:150px; border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,.2); }
-
-    .gallery { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; justify-content:center; }
-    .gallery img { width:100%; max-width:100px; height:auto; border-radius:6px; cursor:pointer; transition:transform .2s; }
-    .gallery img:hover { transform:scale(1.1); }
-
-    footer { background:#008080; color:white; text-align:center; padding:15px; margin-top:30px; }
+    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+    .about-logo { text-align: center; margin: 15px 0; }
+    .about-logo img { width: 150px; height: auto; border-radius: 50%; box-shadow: 0px 4px 8px rgba(0,0,0,0.2); }
+    .gallery { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; justify-content: center; }
+    .gallery img { width: 100%; max-width: 100px; height: auto; border-radius: 6px; cursor: pointer; transition: transform 0.2s; }
+    .gallery img:hover { transform: scale(1.1); }
+    footer { background: #008080; color: white; text-align: center; padding: 15px; margin-top: 30px; }
 
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
       .hero h2 { font-size: 1.8rem; }
-      .hero p { font-size: 1rem; }
-      .cards { gap: 15px; }
-      .card img { height: 150px; }
     }
 
-    .dynamic-gallery { display:none; padding:20px; }
-    .dynamic-gallery.active { display:block; }
+    /* Hide galleries by default */
+    .dynamic-gallery { display: none; padding: 20px; }
+    .dynamic-gallery.active { display: block; }
   </style>
 </head>
 <body>
@@ -82,46 +65,48 @@
 <section class="section" id="about">
   <h2>About Us</h2>
   <div class="about-logo">
+    <!-- ✅ Logo path fixed -->
     <img src="images/logo.jpg" alt="Organization Logo">
   </div>
-  <p>Khidmat Foundation, established in 2019, is a non-profit organization dedicated to serving humanity with compassion and equality. Since its inception, the foundation has been actively engaged in social welfare activities, focusing on feeding the hungry, supporting education, providing medical aid, and empowering underprivileged communities.
-
-  Over the years, Khidmat Foundation has organized numerous social welfare programs. Along with welfare work, the foundation also celebrates important cultural and social occasions to not only honor great leaders but also to spread their teachings of justice, equality, and social unity.
-
-  Guided by the spirit of “Khidmat” (service), the foundation continues to work tirelessly to uplift marginalized communities, promote social harmony, and create opportunities for a better future. With the help of volunteers and well-wishers, Khidmat Foundation is striving to build a society where no one is left behind.</p>
+  <p>Khidmat Foundation, established in 2019, is a non-profit organization dedicated to serving humanity with compassion and equality. Since its inception, the foundation has been actively engaged in social welfare activities, focusing on feeding the hungry, supporting education, providing medical aid, and empowering underprivileged communities.</p>
 </section>
 
 <section class="section" id="work">
   <h2>Our Work</h2>
   <div class="cards">
     <div class="card" data-gallery="food">
-      <img src="images/events/food/food1.jpg" alt="Food Distribution (sample)">
+      <img src="images/events/food.jpg" alt="Food">
       <h3>Food Distribution & Eid-E-Milad</h3>
       <p>We organize food drives to feed the hungry and distribute rations to needy families.</p>
     </div>
+
     <div class="card" data-gallery="amrit">
-      <img src="images/Azadi-Ka-Amrit-Mahotsav-Logo.png" alt="75th Amrit Mahotsav">
+      <img src="images/events/amrit.jpg" alt="75th Amrit Mahotsav">
       <h3>75th Amrit Mahotsav</h3>
       <p>We celebrated Azadi Ka Amrit Mahotsav with cultural programs and community events.</p>
     </div>
+
     <div class="card" data-gallery="healthcare">
-      <img src="images/clinic-tablet-hands-doctor-patient.png" alt="Medical Assistance">
+      <img src="images/events/healthcare.jpg" alt="Medical Assistance">
       <h3>Healthcare Camps</h3>
       <p>We organized multiple healthcare camps to provide medical support to the community.</p>
     </div>
+
     <div class="card" data-gallery="shiv">
-      <img src="images/vector-illustration-chhatrapati-shivaji-maharaj.png" alt="Shiv Jayanti">
+      <img src="images/events/shiv.jpg" alt="Shiv Jayanti">
       <h3>Shiv Jayanti</h3>
-      <p>We celebrate Shiv Jayanti to honor Chhatrapati Shivaji Maharaj.</p>
+      <p>We celebrate Shiv Jayanti with cultural programs and community gatherings to honor Chhatrapati Shivaji Maharaj.</p>
     </div>
+
     <div class="card" data-gallery="ambedkar">
-      <img src="images/dr-br-ambedkar-jayanti.jpg" alt="Ambedkar Jayanti">
+      <img src="images/events/ambedkar.jpg" alt="Ambedkar Jayanti">
       <h3>Ambedkar Jayanti</h3>
-      <p>We celebrate Ambedkar Jayanti with community gatherings.</p>
+      <p>We celebrate Ambedkar Jayanti with cultural programs and community gatherings.</p>
     </div>
   </div>
 </section>
 
+<!-- Dynamic Galleries -->
 <div id="dynamic-gallery-container"></div>
 
 <section class="section" id="contact">
@@ -136,44 +121,35 @@
 
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  let galleryData = {};
-  let galleryLoaded = false;
+  const galleryData = {
+    food: ["food1.jpg","food2.jpg","food3.jpg"],
+    amrit: ["amrit1.jpg","amrit2.jpg","amrit3.jpg","amrit4.jpg"],
+    healthcare: ["healthcare1.jpg","healthcare2.jpg"],
+    shiv: ["shiv1.jpg","shiv2.jpg","shiv3.jpg"],
+    ambedkar: ["ambedkar1.jpg","ambedkar2.jpg","ambedkar3.jpg","ambedkar4.jpg"]
+  };
 
-  async function loadGalleryData() {
-    const res = await fetch('images/events/gallery.json');
-    galleryData = await res.json();
-    galleryLoaded = true;
-  }
+  const container = document.getElementById("dynamic-gallery-container");
 
-  const container = document.getElementById('dynamic-gallery-container');
-  const lightbox = GLightbox({ selector: '.glightbox' });
-
-  async function showGallery(type) {
-    if (!galleryLoaded) { try { await loadGalleryData(); } catch(e){ console.error(e); return; } }
-    if (!galleryData[type]) { alert('No images found for this event'); return; }
-
-    container.innerHTML = '';
-    const galleryDiv = document.createElement('div');
-    galleryDiv.className = 'section dynamic-gallery active';
-
-    const h2 = document.createElement('h2');
-    h2.textContent = type.charAt(0).toUpperCase() + type.slice(1) + ' Gallery';
+  function showGallery(type) {
+    container.innerHTML = ""; // Clear previous gallery
+    const galleryDiv = document.createElement("div");
+    galleryDiv.className = "section dynamic-gallery active";
+    const h2 = document.createElement("h2");
+    h2.textContent = type.charAt(0).toUpperCase() + type.slice(1) + " Gallery";
     galleryDiv.appendChild(h2);
 
-    const divGallery = document.createElement('div');
-    divGallery.className = 'gallery';
+    const divGallery = document.createElement("div");
+    divGallery.className = "gallery";
 
     galleryData[type].forEach(img => {
-      const a = document.createElement('a');
-      a.href = `images/events/${type}/${img}`;
-      a.className = 'glightbox';
+      const a = document.createElement("a");
+      a.href = `images/events/${img}`;
+      a.className = "glightbox";
       a.dataset.gallery = type;
-
-      const image = document.createElement('img');
-      image.src = `images/events/${type}/${img}`;
-      image.alt = `${type} image`;
-      image.loading = 'lazy';
-
+      const image = document.createElement("img");
+      image.src = `images/events/${img}`;
+      image.alt = type + " Image";
       a.appendChild(image);
       divGallery.appendChild(a);
     });
@@ -181,15 +157,16 @@
     galleryDiv.appendChild(divGallery);
     container.appendChild(galleryDiv);
 
-    lightbox.reload();
+    GLightbox({ selector: '.glightbox' });
     window.scrollTo({ top: container.offsetTop, behavior: 'smooth' });
   }
 
-  document.querySelectorAll('.cards .card').forEach(card => {
-    card.addEventListener('click', () => showGallery(card.dataset.gallery));
+  document.querySelectorAll(".cards .card").forEach(card => {
+    card.addEventListener("click", () => showGallery(card.dataset.gallery));
   });
 
-  document.querySelector('.nav-home').addEventListener('click', (e) => {
+  // Home button returns to top
+  document.querySelector(".nav-home").addEventListener("click", (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
