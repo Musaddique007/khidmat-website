@@ -18,33 +18,43 @@
     nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 500; }
     nav a:hover { text-decoration: underline; }
 
-    /* Hero section */
+    /* Hero section with overlay */
     .hero {
-      background: url('images/help.jpeg') no-repeat center center/cover; /* updated background image */
-      color: white; 
-      min-height: 60vh; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      text-align: center; 
-      flex-direction: column; 
-      padding: 0 20px; 
-      border-radius: 10px;
+        position: relative;
+        background: url('images/help.jpeg') no-repeat center center/cover;
+        color: white; 
+        min-height: 60vh; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        flex-direction: column; 
+        padding: 0 20px; 
+        border-radius: 10px;
+        overflow: hidden;
     }
-    .hero h2 { 
-      font-size: 2.5rem; 
-      margin-bottom: 10px; 
-      background: rgba(0, 0, 0, 0.5); /* dark overlay behind text for readability */
-      padding: 15px; 
-      border-radius: 10px;
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5); /* semi-transparent black */
+        z-index: 1;
     }
-    .hero p { 
-      font-size: 1.2rem; 
-      max-width: 700px; 
-      background: rgba(0, 0, 0, 0.4); 
-      padding: 10px; 
-      border-radius: 10px;
+
+    .hero h2,
+    .hero p {
+        position: relative;
+        z-index: 2;
+        background: rgba(0,0,0,0.4); /* subtle background behind text */
+        padding: 10px 20px;
+        border-radius: 10px;
     }
+
+    .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; max-width: 700px; }
 
     .section { padding: 50px 20px; text-align: center; }
     .section h2 { font-size: 2rem; margin-bottom: 20px; color: #008080; }
@@ -83,7 +93,9 @@
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- Hero section with overlay -->
 <section class="hero" id="home">
+  <div class="hero-overlay"></div>
   <h2>Together We Can Make a Difference</h2>
   <p>Khidmat Foundation is dedicated to helping the poor, needy, and underprivileged sections of society with love and care.</p>
 </section>
