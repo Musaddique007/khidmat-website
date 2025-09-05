@@ -17,9 +17,35 @@
     nav { background: #006666; padding: 10px; text-align: center; }
     nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 500; }
     nav a:hover { text-decoration: underline; }
-    .hero { background: url('images/hero.jpg') no-repeat center center/cover; color: white; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; padding: 0 20px; }
-    .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-    .hero p { font-size: 1.2rem; max-width: 700px; }
+
+    /* Hero section */
+    .hero {
+      background: url('images/help.jpeg') no-repeat center center/cover; /* updated background image */
+      color: white; 
+      min-height: 60vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      flex-direction: column; 
+      padding: 0 20px; 
+      border-radius: 10px;
+    }
+    .hero h2 { 
+      font-size: 2.5rem; 
+      margin-bottom: 10px; 
+      background: rgba(0, 0, 0, 0.5); /* dark overlay behind text for readability */
+      padding: 15px; 
+      border-radius: 10px;
+    }
+    .hero p { 
+      font-size: 1.2rem; 
+      max-width: 700px; 
+      background: rgba(0, 0, 0, 0.4); 
+      padding: 10px; 
+      border-radius: 10px;
+    }
+
     .section { padding: 50px 20px; text-align: center; }
     .section h2 { font-size: 2rem; margin-bottom: 20px; color: #008080; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 20px; }
@@ -65,7 +91,6 @@
 <section class="section" id="about">
   <h2>About Us</h2>
   <div class="about-logo">
-    <!-- ✅ Logo path fixed -->
     <img src="images/logo.jpg" alt="Organization Logo">
   </div>
   <p>Khidmat Foundation, established in 2019, is a non-profit organization dedicated to serving humanity with compassion and equality. Since its inception, the foundation has been actively engaged in social welfare activities, focusing on feeding the hungry, supporting education, providing medical aid, and empowering underprivileged communities.</p>
@@ -79,25 +104,21 @@
       <h3>Food Distribution & Eid-E-Milad</h3>
       <p>We organize food drives to feed the hungry and distribute rations to needy families.</p>
     </div>
-
     <div class="card" data-gallery="amrit">
       <img src="images/events/amrit.jpg" alt="75th Amrit Mahotsav">
       <h3>75th Amrit Mahotsav</h3>
       <p>We celebrated Azadi Ka Amrit Mahotsav with cultural programs and community events.</p>
     </div>
-
     <div class="card" data-gallery="healthcare">
       <img src="images/events/healthcare.jpg" alt="Medical Assistance">
       <h3>Healthcare Camps</h3>
       <p>We organized multiple healthcare camps to provide medical support to the community.</p>
     </div>
-
     <div class="card" data-gallery="shiv">
       <img src="images/events/shiv.jpg" alt="Shiv Jayanti">
       <h3>Shiv Jayanti</h3>
       <p>We celebrate Shiv Jayanti with cultural programs and community gatherings to honor Chhatrapati Shivaji Maharaj.</p>
     </div>
-
     <div class="card" data-gallery="ambedkar">
       <img src="images/events/ambedkar.jpg" alt="Ambedkar Jayanti">
       <h3>Ambedkar Jayanti</h3>
@@ -106,7 +127,6 @@
   </div>
 </section>
 
-<!-- Dynamic Galleries -->
 <div id="dynamic-gallery-container"></div>
 
 <section class="section" id="contact">
@@ -132,7 +152,7 @@
   const container = document.getElementById("dynamic-gallery-container");
 
   function showGallery(type) {
-    container.innerHTML = ""; // Clear previous gallery
+    container.innerHTML = "";
     const galleryDiv = document.createElement("div");
     galleryDiv.className = "section dynamic-gallery active";
     const h2 = document.createElement("h2");
@@ -165,7 +185,6 @@
     card.addEventListener("click", () => showGallery(card.dataset.gallery));
   });
 
-  // Home button returns to top
   document.querySelector(".nav-home").addEventListener("click", (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
